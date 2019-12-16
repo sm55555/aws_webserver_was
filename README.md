@@ -43,11 +43,14 @@ proxy_pass http://localhost:8080;
 proxy_set_header X-Real-IP $remote_addr;  
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
 proxy_set_header Host $http_host;  
+
 을 추가 한다.  
 
 ## 정상적 종료
 
 웹서버(nginx) 종료 : service nginx stop
+
 WAS(tomcat) 종료 : apache-tomcat-8.5.50/bin/startup.sh
+
 운영체제 종료 : shutdown -h now   <- now는 지금 종료한다는뜻... 이상
 
