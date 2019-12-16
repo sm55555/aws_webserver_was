@@ -31,7 +31,7 @@ apache tomcat/bin/startup.sh 를 실행시킨다.
 
 ### nginx, tomcat 연동
 
-root 권한으로 vi/etc/nginx/nginx.conf
+root 권한으로 vi /etc/nginx/nginx.conf
 에서 /server로 이거 찾고 location 아래에
 
 proxy_pass http://localhost:8080;
