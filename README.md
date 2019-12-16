@@ -1,6 +1,6 @@
 # Amazon linux 2에서 nginx, tomcat 연동
 
-1. nginx 설치
+###nginx 설치
 
 그냥 yum instal nginx가 아니라 
 amazon-linux-extras install nginx1.12 명령어를 통해서 다운 받는다.
@@ -9,7 +9,7 @@ service nginx start 로 기동
 
 웹서버 잘되는지 확인
 
-2. tomcat 설치
+###tomcat 설치
 
 자바 깔려있는지 확인 java -version
 
@@ -40,4 +40,4 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 proxy_set_header Host $http_host;
 을 추가 한다.
 
-확인
+완성
