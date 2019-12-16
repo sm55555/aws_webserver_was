@@ -1,6 +1,6 @@
 # Amazon linux 2에서 nginx, tomcat 연동
 
-### nginx 설치
+### *nginx 설치
 
 yum install nginx가 아니라 
 amazon-linux-extras install nginx1.12 명령어를 통해서 다운 받는다.
@@ -8,7 +8,7 @@ amazon-linux-extras install nginx1.12 명령어를 통해서 다운 받는다.
 service nginx start로 기동
 service nginx status로 상태 확인
 
-### tomcat 설치
+### *tomcat 설치
 
 tomcat은 java 기반이라 자바 설치가 필수! 
 
@@ -34,7 +34,7 @@ apache-tomcat-8.5.50/bin/startup.sh 를 실행시킨다.
 
 AWS SG에서도 톰캣을 열기 위해 8080포트 열어준다.
 
-### nginx, tomcat 연동
+### *nginx, tomcat 연동
 
 root 권한으로 vi /etc/nginx/nginx.conf
 에서 /server로 이거 찾고 location 아래에
@@ -46,7 +46,7 @@ proxy_set_header Host $http_host;
 
 을 추가 한다.  
 
-## 정상적 종료
+## *정상적 종료
 
 웹서버(nginx) 종료 : service nginx stop
 
