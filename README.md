@@ -2,16 +2,17 @@
 
 ### nginx 설치
 
-그냥 yum instal nginx가 아니라 
+yum install nginx가 아니라 
 amazon-linux-extras install nginx1.12 명령어를 통해서 다운 받는다.
 
-service nginx start 로 기동  
-
-웹서버 잘되는지 확인
+service nginx start로 기동
+service nginx status로 상태 확인
 
 ### tomcat 설치
 
-자바 깔려있는지 확인 java -version
+tomcat은 java 기반이라 자바 설치가 필수! 
+
+ec2 linux 내부에 설치 확인 java -version
 
 없으면 sudo yum install -y java-1.8.0-openjdk-devel.x86_64
 
@@ -21,13 +22,17 @@ sudo /usr/sbin/alternatives --config java 으로 확인
 
 재설정후 java -version 로 버젼 확인
 
-wget 으로 tomcat을 받는다.
+자바 설치 완료 !
 
-tar.gz이니깐 tar -zxvf 로 파일압축 풀기를 한다.
+tomcat 홈페이지에서 8.5 버젼을다운 받는다 >>> http://tomcat.apache.org/
 
-apache tomcat/bin/startup.sh 를 실행시킨다.
+리눅스에서 wget으로 링크를 활용하여 다운로드 ! (다운로드 주소 cd /etc/usr)
 
-아 여기서 AWS SG도 8080포트 열어준다.
+tar.gz이니깐 tar -zxvf 로 파일압축 풀기
+
+apache-tomcat-8.5.50/bin/startup.sh 를 실행시킨다.
+
+AWS SG에서도 톰캣을 열기 위해 8080포트 열어준다.
 
 ### nginx, tomcat 연동
 
@@ -40,4 +45,9 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 proxy_set_header Host $http_host;
 을 추가 한다.
 
-완성
+## 정상적 종료
+
+웹서버(nginx) 종료 : service nginx stop
+WAS(tomcat) 종료 : apache-tomcat-8.5.50/bin/startup.sh
+운영체제 종료 : shutdown -h now   <- now는 지금 종료한다는뜻... 이상
+
