@@ -39,11 +39,11 @@ AWS SG에서도 톰캣을 열기 위해 8080포트 열어준다.
 root 권한으로 vi /etc/nginx/nginx.conf
 에서 /server로 이거 찾고 location 아래에
 
-proxy_pass http://localhost:8080;
-proxy_set_header X-Real-IP $remote_addr;
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header Host $http_host;
-을 추가 한다.
+proxy_pass http://localhost:8080;  
+proxy_set_header X-Real-IP $remote_addr;  
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
+proxy_set_header Host $http_host;  
+을 추가 한다.  
 
 ## 정상적 종료
 
