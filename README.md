@@ -46,7 +46,7 @@ proxy_set_header Host $http_host;
 
 을 추가 한다.  
 
-## 4. 정상적 종료
+### 4. 정상적 종료
 
 웹서버(nginx) 종료 : service nginx stop
 
