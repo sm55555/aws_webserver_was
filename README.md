@@ -1,14 +1,19 @@
-# Amazon linux 2에서 nginx, tomcat 연동
+# How to install Nginx & Tomcat
 
-### 1. nginx 설치
+### 1. nginx install
 
-yum install nginx가 아니라 
-amazon-linux-extras install nginx1.12 명령어를 통해서 다운 받는다.
 
-service nginx start로 기동
-service nginx status로 상태 확인
+enviroment : amazon linux2
+ 
+not using yum install nginx
 
-* * *
+~~~
+sudo su
+amazon-linux-extras install nginx1.12
+service nginx status
+service nginx start
+~~~
+
 
 ### 2. tomcat 설치
 
